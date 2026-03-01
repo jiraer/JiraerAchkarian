@@ -1,4 +1,6 @@
 import type { MetadataRoute } from 'next';
+export const dynamic = "force-static";
+
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || 'https://your-portfolio-domain.com';
