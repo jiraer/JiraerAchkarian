@@ -866,11 +866,6 @@ __turbopack_context__.s([
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-hook-form/dist/index.esm.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zod$2f$v3$2f$external$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__z$3e$__ = __turbopack_context__.i("[project]/node_modules/zod/v3/external.js [app-client] (ecmascript) <export * as z>");
-(()=>{
-    const e = new Error("Cannot find module '@hookform/resolvers/zod'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$apps$2f$frontend$2f$lib$2f$config$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/apps/frontend/lib/config.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
@@ -878,7 +873,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
-;
 ;
 ;
 ;
@@ -898,7 +892,6 @@ const ContactForm = ()=>{
     const [status, setStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('idle');
     const [submitting, setSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const { register, handleSubmit, formState: { errors }, reset } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$hook$2d$form$2f$dist$2f$index$2e$esm$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useForm"])({
-        resolver: zodResolver(schema),
         defaultValues: {
             honeypot: ''
         }
@@ -938,7 +931,7 @@ const ContactForm = ()=>{
                 className: "absolute -inset-1 rounded-3xl bg-gradient-to-r from-highlight/20 via-accent/10 to-highlight/20 blur-2xl opacity-60 pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                lineNumber: 59,
+                lineNumber: 57,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -949,7 +942,7 @@ const ContactForm = ()=>{
                         children: "Open to select collaborations"
                     }, void 0, false, {
                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                        lineNumber: 63,
+                        lineNumber: 61,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -957,7 +950,7 @@ const ContactForm = ()=>{
                         children: "Share a bit about your product, timeline, and what you're trying to unlock."
                     }, void 0, false, {
                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                        lineNumber: 67,
+                        lineNumber: 65,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -974,7 +967,7 @@ const ContactForm = ()=>{
                                                 children: "Name"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 75,
+                                                lineNumber: 73,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -984,7 +977,7 @@ const ContactForm = ()=>{
                                                 className: "mt-2 w-full rounded-xl border border-white/10 bg-neutral-800/60 px-4 py-3 text-sm text-white outline-none transition focus:border-highlight focus:ring-2 focus:ring-highlight/30"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 78,
+                                                lineNumber: 76,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             errors.name && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -994,13 +987,13 @@ const ContactForm = ()=>{
                                                 children: errors.name.message
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 85,
+                                                lineNumber: 83,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 72,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1010,7 +1003,7 @@ const ContactForm = ()=>{
                                                 children: "Email"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 92,
+                                                lineNumber: 90,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1021,7 +1014,7 @@ const ContactForm = ()=>{
                                                 className: "mt-2 w-full rounded-xl border border-white/10 bg-neutral-800/60 px-4 py-3 text-sm text-white outline-none transition focus:border-highlight focus:ring-2 focus:ring-highlight/30"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 95,
+                                                lineNumber: 93,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             errors.email && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1031,19 +1024,19 @@ const ContactForm = ()=>{
                                                 children: errors.email.message
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 103,
+                                                lineNumber: 101,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 91,
+                                        lineNumber: 89,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                lineNumber: 73,
+                                lineNumber: 71,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1056,7 +1049,7 @@ const ContactForm = ()=>{
                                                 children: "Company (optional)"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 112,
+                                                lineNumber: 110,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1064,13 +1057,13 @@ const ContactForm = ()=>{
                                                 className: "mt-2 w-full rounded-xl border border-white/10 bg-neutral-800/60 px-4 py-3 text-sm text-white outline-none transition focus:border-highlight focus:ring-2 focus:ring-highlight/30"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 115,
+                                                lineNumber: 113,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 111,
+                                        lineNumber: 109,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1080,7 +1073,7 @@ const ContactForm = ()=>{
                                                 children: "Budget range (optional)"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 122,
+                                                lineNumber: 120,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1088,19 +1081,19 @@ const ContactForm = ()=>{
                                                 className: "mt-2 w-full rounded-xl border border-white/10 bg-neutral-800/60 px-4 py-3 text-sm text-white outline-none transition focus:border-highlight focus:ring-2 focus:ring-highlight/30"
                                             }, void 0, false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 123,
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 119,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                lineNumber: 110,
+                                lineNumber: 108,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1110,7 +1103,7 @@ const ContactForm = ()=>{
                                         children: "How can I help?"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 133,
+                                        lineNumber: 131,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1121,7 +1114,7 @@ const ContactForm = ()=>{
                                         className: "mt-2 w-full rounded-xl border border-white/10 bg-neutral-800/60 px-4 py-3 text-sm text-white outline-none transition focus:border-highlight focus:ring-2 focus:ring-highlight/30"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 136,
+                                        lineNumber: 134,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     errors.message && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1131,13 +1124,13 @@ const ContactForm = ()=>{
                                         children: errors.message.message
                                     }, void 0, false, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 142,
                                         columnNumber: 17
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                lineNumber: 132,
+                                lineNumber: 130,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1147,7 +1140,7 @@ const ContactForm = ()=>{
                                         children: "How did you find me? (optional)"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 149,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1155,13 +1148,13 @@ const ContactForm = ()=>{
                                         className: "mt-2 w-full rounded-xl border border-white/10 bg-neutral-800/60 px-4 py-3 text-sm text-white outline-none transition focus:border-highlight focus:ring-2 focus:ring-highlight/30"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 152,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                lineNumber: 150,
+                                lineNumber: 148,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1173,7 +1166,7 @@ const ContactForm = ()=>{
                                         children: "Leave empty"
                                     }, void 0, false, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 160,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1182,13 +1175,13 @@ const ContactForm = ()=>{
                                         tabIndex: -1
                                     }, void 0, false, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 163,
+                                        lineNumber: 161,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                lineNumber: 161,
+                                lineNumber: 159,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1203,7 +1196,7 @@ const ContactForm = ()=>{
                                         children: submitting ? 'Sending…' : 'Send message'
                                     }, void 0, false, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 167,
+                                        lineNumber: 165,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1226,7 +1219,7 @@ const ContactForm = ()=>{
                                                 children: "Message received. I'll get back within 1–2 business days."
                                             }, "success", false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 179,
+                                                lineNumber: 177,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             status === 'error' && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1246,37 +1239,37 @@ const ContactForm = ()=>{
                                                 children: "Something went wrong. Please try again."
                                             }, "error", false, {
                                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                                lineNumber: 191,
+                                                lineNumber: 189,
                                                 columnNumber: 19
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                        lineNumber: 177,
+                                        lineNumber: 175,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                                lineNumber: 166,
+                                lineNumber: 164,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         ]
                     }, void 0, true, {
                         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                        lineNumber: 71,
+                        lineNumber: 69,
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-                lineNumber: 61,
+                lineNumber: 59,
                 columnNumber: 9
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/apps/frontend/components/contact/ContactForm.tsx",
-        lineNumber: 56,
+        lineNumber: 54,
         columnNumber: 7
     }, ("TURBOPACK compile-time value", void 0));
 };

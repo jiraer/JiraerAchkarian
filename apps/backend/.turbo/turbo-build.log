@@ -1,0 +1,13 @@
+
+> portfolio-backend@1.0.0 build
+> tsc
+
+src/routes/authRoutes.ts(2,30): error TS2307: Cannot find module '../controllers/authController' or its corresponding type declarations.
+src/services/contactService.ts(31,41): error TS2339: Property 'createdAt' does not exist on type 'Document<unknown, {}, IContactMessage, {}, {}> & IContactMessage & { _id: ObjectId; } & { __v: number; }'.
+npm error Lifecycle script `build` failed with error:
+npm error code 2
+npm error path C:\Users\Admin\Desktop\JiraerAchkarian\portfolio-monorepo\apps\backend
+npm error workspace portfolio-backend@1.0.0
+npm error location C:\Users\Admin\Desktop\JiraerAchkarian\portfolio-monorepo\apps\backend
+npm error command failed
+npm error command C:\WINDOWS\system32\cmd.exe /d /s /c tsc
