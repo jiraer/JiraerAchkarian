@@ -15,4 +15,5 @@ node_modules
   logs
   *.log
   mongo-data
-  
+  # Next.js build artifacts
+apps/frontend/.next/

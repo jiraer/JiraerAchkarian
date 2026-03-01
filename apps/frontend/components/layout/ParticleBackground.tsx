@@ -1,10 +1,9 @@
 'use client'
 
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Points, PointMaterial } from '@react-three/drei';
-
-import { useMemo, useRef } from 'react';
-import * as THREE from '@react-three/drei';
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Points, PointMaterial } from '@react-three/drei'
+import { useMemo, useRef } from 'react'
+import * as THREE from 'three'
 
 function createLayer(count: number, depth: number) {
   const positions = new Float32Array(count * 3)
@@ -18,14 +17,16 @@ function createLayer(count: number, depth: number) {
   return positions
 }
 
-const Layer = ({
-  count,
-  depth,
-  color,
-  size,
-  opacity,
-  speed
-}: any) => {
+interface LayerProps {
+  count: number
+  depth: number
+  color: string
+  size: number
+  opacity: number
+  speed: number
+}
+
+const Layer = ({ count, depth, color, size, opacity, speed }: LayerProps) => {
   const ref = useRef<THREE.Points>(null!)
   const { mouse } = useThree()
   const positions = useMemo(() => createLayer(count, depth), [count, depth])
@@ -36,8 +37,16 @@ const Layer = ({
     // subtle drift instead of rotation
     ref.current.position.x = mouse.x * 0.3
     ref.current.position.y = mouse.y * 0.2
-
     ref.current.rotation.z = t * speed
+
+    // Fix: material opacity (single or array)
+    const material = ref.current.material
+    const finalOpacity = opacity
+    if (Array.isArray(material)) {
+      material.forEach((m) => (m.opacity = finalOpacity))
+    } else {
+      material.opacity = finalOpacity
+    }
   })
 
   return (
@@ -57,40 +66,15 @@ const Layer = ({
 export const ParticleBackground = () => {
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 opacity-65">
-      <Canvas
-        camera={{ position: [0, 0, 5], fov: 65 }}
-        dpr={[1, 1.5]}
-        gl={{ antialias: false, powerPreference: 'high-performance' }}
-      >
+      <Canvas camera={{ position: [0, 0, 5], fov: 65 }} dpr={[1, 1.5]}>
         {/* Far layer */}
-        <Layer
-          count={900}
-          depth={-4}
-          color="#FFD700"
-          size={0.01}
-          opacity={0.5}
-          speed={0.002}
-        />
+        <Layer count={900} depth={-4} color="#FFD700" size={0.01} opacity={0.5} speed={0.002} />
 
         {/* Mid layer */}
-        <Layer
-          count={700}
-          depth={-1}
-          color="#8FAF9F"
-          size={0.04}
-          opacity={0.3}
-          speed={0.015}
-        />
+        <Layer count={700} depth={-1} color="#8FAF9F" size={0.04} opacity={0.3} speed={0.015} />
 
         {/* Front accent layer */}
-        <Layer
-          count={500}
-          depth={2}
-          color="#D6A75E"
-          size={0.02}
-          opacity={0.6}
-          speed={0.009}
-        />
+        <Layer count={500} depth={2} color="#D6A75E" size={0.02} opacity={0.6} speed={0.009} />
       </Canvas>
     </div>
   )

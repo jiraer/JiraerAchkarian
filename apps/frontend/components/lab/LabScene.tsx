@@ -54,8 +54,7 @@ const GlassHUD = ({ scale = 1 }) => {
     const t = state.clock.getElapsedTime()
     if (scanRef.current) {
       scanRef.current.position.y = Math.sin(t * 1.5) * 0.8
-      scanRef.current.material.opacity = 0.35 + Math.abs(Math.sin(t * 0.5)) * 0.25
-    }
+     }
 
     if (textRef.current && t % 2 < 0.02) {
       textRef.current.text = Math.random() > 0.5 ? '> SYNCING...' : '> SECURE_NODE'
@@ -84,9 +83,18 @@ const GlassHUD = ({ scale = 1 }) => {
           <Text ref={textRef} position={[-1.6, 0.6, 0.26]} fontSize={0.25} color="#ffffff" anchorX="left" fontWeight="bold">
             {"> INITIALIZING"}
           </Text>
-          <Text position={[-1.6, 0.1, 0.26]} fontSize={0.10} color="#00ffcc" opacity={0.7} transparent anchorX="left" fontWeight="bold" lineHeight={1.5}>
-            {"LOAD: 14.2% \nNODE: SOUTH_EAST_VR \nSTATUS: ENCRYPTED"}
-          </Text>
+          <Text 
+  position={[-1.6, 0.1, 0.26]} 
+  fontSize={0.10} 
+  color="#00ffcc" 
+  fillOpacity={0.7} // Use this instead of opacity + transparent
+  anchorX="left" 
+  fontWeight="bold" 
+  lineHeight={1.5}
+>
+  {"LOAD: 14.2% \nNODE: SOUTH_EAST_VR \nSTATUS: ENCRYPTED"}
+</Text>
+
 
           {/* Internal Scanline */}
           <mesh ref={scanRef} position={[0, 0, 0.27]}>
