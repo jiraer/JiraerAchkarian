@@ -1,0 +1,11 @@
+{
+  "[project]/apps/frontend/components/layout/Shell.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/apps/frontend/components/layout/Shell.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/apps_frontend_components_layout_3e46f5ce._.js",
+      "static/chunks/node_modules_3aa9fc55._.js",
+      "static/chunks/apps_frontend_components_layout_b0c29971._.js",
+      "static/chunks/apps_frontend_components_layout_Shell_tsx_b18c88ee._.js"
+    ]
+  }
+}

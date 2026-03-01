@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "strict": true,
+      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "baseUrl": ".",
+      "paths": {
+        "@frontend/*": ["apps/frontend/*"],
+        "@backend/*": ["apps/backend/*"]
+      },
+      "skipLibCheck": true
+    }
+  }
+  

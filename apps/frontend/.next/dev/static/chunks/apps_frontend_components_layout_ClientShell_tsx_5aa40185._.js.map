@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Admin/Desktop/JiraerAchkarian/portfolio-monorepo/apps/frontend/components/layout/ClientShell.tsx"],"sourcesContent":["'use client';\r\n\r\nimport dynamic from 'next/dynamic';\r\n\r\n// We move the dynamic import here, inside a Client Component\r\nconst Shell = dynamic(\r\n  () => import('./Shell').then((m) => m.Shell),\r\n  { ssr: false }\r\n);\r\n\r\nexport default function ClientShell({ children }: { children: React.ReactNode }) {\r\n  return <Shell>{children}</Shell>;\r\n}\r\n"],"names":[],"mappings":";;;;;AAEA;;AAFA;;;AAIA,6DAA6D;AAC7D,MAAM,QAAQ,IAAA,6KAAO,EACnB,IAAM,2IAAkB,IAAI,CAAC,CAAC,IAAM,EAAE,KAAK;;;;;;IACzC,KAAK;;KAFH;AAKS,SAAS,YAAY,EAAE,QAAQ,EAAiC;IAC7E,qBAAO,6LAAC;kBAAO;;;;;;AACjB;MAFwB"}}]
+}

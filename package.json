@@ -1,0 +1,18 @@
+{
+    "name": "portfolio-monorepo",
+    "private": true,
+    "scripts": {
+      "dev": "turbo run dev",
+      "build": "turbo run build",
+      "lint": "turbo run lint",
+      "start": "turbo run start"
+    },
+    "workspaces": ["apps/frontend", "apps/backend"],
+    "devDependencies": {
+      "turbo": "^2.0.0",
+      "typescript": "^5.6.0",
+      "eslint": "^9.0.0",
+      "prettier": "^3.3.0"
+    }
+  }
+  

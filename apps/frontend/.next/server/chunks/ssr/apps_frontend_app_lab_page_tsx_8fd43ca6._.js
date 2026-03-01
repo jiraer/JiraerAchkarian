@@ -1,0 +1,3 @@
+module.exports=[45383,a=>{"use strict";var b=a.i(87924);let c=(0,a.i(19721).default)(async()=>{},{loadableGenerated:{modules:[40594]},ssr:!1});function d(){return(0,b.jsxs)("main",{className:"px-6 md:px-10 lg:px-16 pb-24 pt-12 space-y-10",children:[(0,b.jsx)("header",{className:"flex flex-col md:flex-row md:items-end md:justify-between gap-6",children:(0,b.jsxs)("div",{children:[(0,b.jsx)("h1",{className:"text-4xl md:text-5xl font-display tracking-tight",children:"Lab"}),(0,b.jsx)("p",{className:"mt-3 max-w-xl text-sm text-neutral-300",children:"A living playground for spatial interfaces, motion-first experiments, and real-time data visualizations."})]})}),(0,b.jsx)(c,{})]})}a.s(["default",()=>d])}];
+
+//# sourceMappingURL=apps_frontend_app_lab_page_tsx_8fd43ca6._.js.map
