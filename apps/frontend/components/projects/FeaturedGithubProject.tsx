@@ -1,47 +1,36 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { BACKEND_URL } from '../../lib/config';
-import type { FeaturedGithubProject as FeaturedGithubProjectType } from '../../lib/types';
+import { useState, useEffect } from 'react';
 import { Skeleton } from '../ui/skeleton';
-import { motion } from  'framer-motion';
+import { motion } from 'framer-motion';
 import { Star, Github } from 'lucide-react';
 
 /**
  * FeaturedGithubProject
- * - Client component (data fetching + state)
+ * - Client component (hardcoded data for now)
  * - Fully typed
  * - Suspense compatible (future SSR integration)
  */
 export const FeaturedGithubProject = () => {
-  const [data, setData] = useState<FeaturedGithubProjectType | null>(null);
+  const [data, setData] = useState<any | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Hardcoded data for now
   useEffect(() => {
-    let isMounted = true;
-
-    const fetchFeatured = async () => {
-      try {
-        const res = await fetch(`${BACKEND_URL}/api/integrations/github/featured`, {
-          next: { revalidate: 900 }, // ISR caching for 15 minutes
-        });
-
-        if (!res.ok) throw new Error('Failed to fetch featured project');
-
-        const json = await res.json();
-        if (isMounted) setData(json.data);
-      } catch (err) {
-        console.error('Error fetching featured project:', err);
-        if (isMounted) setData(null);
-      } finally {
-        if (isMounted) setLoading(false);
-      }
+    const hardcodedProject = {
+      name: 'Awesome Project',
+      description:
+        'This is a description of the awesome project, showcasing how cool it is!',
+      stars: 1234,
+      lastUpdated: '2023-08-01',
+      htmlUrl: 'https://github.com/yourname/awesome-project',
+      readmePreview: 'This is a preview of the project\'s README.',
     };
 
-    fetchFeatured();
-    return () => {
-      isMounted = false; // prevent state updates on unmounted component
-    };
+    setTimeout(() => {
+      setData(hardcodedProject);
+      setLoading(false);
+    }, 1000); // Simulate loading delay
   }, []);
 
   if (loading) {

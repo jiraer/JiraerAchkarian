@@ -1,13 +1,11 @@
-'use client';
+'use client'
 
-import dynamic from 'next/dynamic';
+import { Shell } from './Shell'
 
-// We move the dynamic import here, inside a Client Component
-const Shell = dynamic(
-  () => import('./Shell').then((m) => m.Shell),
-  { ssr: false }
-);
-
-export default function ClientShell({ children }: { children: React.ReactNode }) {
-  return <Shell>{children}</Shell>;
+export default function ClientShell({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return <Shell>{children}</Shell>
 }

@@ -6,6 +6,7 @@ export type Project = {
     featured: boolean;
     githubUrl?: string;
     liveUrl?: string;
+    category?: string
   };
   
   export type FeaturedGithubProject = {
@@ -15,5 +16,7 @@ export type Project = {
     lastUpdated: string;
     htmlUrl: string;
     readmePreview: string;
+      category?: string
+
   };
   
