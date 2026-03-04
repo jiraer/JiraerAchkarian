@@ -1,16 +1,19 @@
 import { Schema, model } from 'mongoose';
   
-  export interface IContactMessage {
-    name: string;
-    email: string;
-    message: string;
-    company?: string;
-    budgetRange?: string;
-    source?: string;
-    honeypot?: string;
-    userAgent?: string;
-    ipHash?: string;
-  }
+export interface IContactMessage {
+  name: string;
+  email: string;
+  message: string;
+  company?: string;
+  budgetRange?: string;
+  source?: string;
+  honeypot?: string;
+  userAgent?: string;
+  ipHash?: string;
+
+  createdAt: Date;     
+  updatedAt: Date; 
+}
   
   const contactMessageSchema = new Schema<IContactMessage>(
     {

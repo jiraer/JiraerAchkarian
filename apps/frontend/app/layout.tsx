@@ -1,8 +1,9 @@
+// apps/frontend/app/layout.tsx
 import '../styles/globals.css';
 import { seo, getPersonJsonLd, getWebSiteJsonLd } from '../lib/seo';
-import ClientShell from '../components/layout/ClientShell'; // Import the new wrapper
+import { Header } from '../components/layout/Header';
+import { Footer } from '../components/layout/Footer';
 
-// Metadata must stay in a Server Component
 export const metadata = seo;
 export const viewport = {
   themeColor: '#0E0E10',
@@ -16,18 +17,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
-      <body className="font-sans">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-        />
-        
-        {/* The ClientShell boundary handles the client-only rendering */}
-        <ClientShell>{children}</ClientShell>
+      <body className="font-sans relative min-h-screen flex flex-col">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </body>
     </html>
   );
