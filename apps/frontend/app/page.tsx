@@ -1,3 +1,5 @@
+'use client'
+
 import { Hero } from '../components/home/Hero';
 import { SkillsGrid } from '../components/home/SkillsGrid';
 import { ExperienceTimeline } from '../components/home/ExperienceTimeline';

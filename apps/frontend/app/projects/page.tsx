@@ -4,6 +4,7 @@ import { ProjectsGrid } from '../../components/projects/ProjectsGrid';
 import { FeaturedGithubProject } from '../../components/projects/FeaturedGithubProject';
 import { ProjectFilters } from '../../components/projects/ProjectFilters';
 import { Skeleton } from '../../components/ui/skeleton';
+import { MetaData } from '@react-three/drei';
 
 export const metadata: Metadata = {
   title: 'Selected work',

@@ -49,7 +49,7 @@ export const AnimatedCursor = () => {
 
   return (
     <>
- 
+
       {/* Outer Ring */}
       <motion.div
         className="pointer-events-none fixed z-[9998] hidden md:block 
@@ -65,7 +65,7 @@ export const AnimatedCursor = () => {
 
       {/* Glow */}
       <motion.div
-        className="pointer-events-none fixed z-[9997] hidden md:block 
+        className="pointer-events-none fixed z-[9999] hidden md:block 
                    h-12 w-12 rounded-full bg-accent/20 blur-xl"
         style={{
           x: smoothX,

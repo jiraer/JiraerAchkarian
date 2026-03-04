@@ -1,11 +1,11 @@
-'use client'
+'use client'; // Must be client component
 
-import { Shell } from './Shell'
+import { Shell } from './Shell';
 
-export default function ClientShell({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return <Shell>{children}</Shell>
+interface ClientShellProps {
+  children: React.ReactNode;
+}
+
+export default function ClientShell({ children }: ClientShellProps) {
+  return <Shell>{children}</Shell>;
 }

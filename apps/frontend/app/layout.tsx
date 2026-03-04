@@ -1,8 +1,6 @@
-// apps/frontend/app/layout.tsx
 import '../styles/globals.css';
 import { seo, getPersonJsonLd, getWebSiteJsonLd } from '../lib/seo';
-import { Header } from '../components/layout/Header';
-import { Footer } from '../components/layout/Footer';
+import ClientShell from '../components/layout/ClientShell';
 
 export const metadata = seo;
 export const viewport = {
@@ -18,12 +16,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="font-sans relative min-h-screen flex flex-col">
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+        {/* SEO structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
 
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        {/* Client-side shell */}
+        <ClientShell>{children}</ClientShell>
       </body>
     </html>
   );

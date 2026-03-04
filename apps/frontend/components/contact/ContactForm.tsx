@@ -9,11 +9,9 @@ export const ContactForm = () => {
   const handleBooking = () => {
     setLoading(true);
 
-    // 🔥 Replace with your Google Calendar booking link
-    const bookingUrl =
-      "https://calendar.google.com/calendar/appointments/YOUR_BOOKING_LINK";
+    const bookingUrl = "https://calendar.app.google/J3VVGXD3VkWsLJUR8";
 
-    window.open(bookingUrl, "_blank");
+    window.open(bookingUrl, "_blank", "noopener,noreferrer");
 
     setTimeout(() => {
       setLoading(false);
@@ -22,8 +20,6 @@ export const ContactForm = () => {
 
   return (
     <div className="relative mx-auto max-w-3xl">
-
-      {/* Glow */}
       <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-highlight/20 via-accent/10 to-highlight/20 blur-2xl opacity-60 pointer-events-none" />
 
       <div className="relative rounded-3xl border border-white/10 bg-neutral-900/80 p-10 backdrop-blur-2xl shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)]">
@@ -39,7 +35,6 @@ export const ContactForm = () => {
 
         <div className="mt-8 space-y-6">
 
-          {/* What to expect */}
           <div className="rounded-2xl border border-white/10 bg-neutral-800/50 p-6 text-sm text-neutral-300">
             <p className="font-medium text-white mb-2">
               What to expect:
@@ -52,9 +47,7 @@ export const ContactForm = () => {
             </ul>
           </div>
 
-          {/* CTA */}
           <div className="flex items-center flex-col md:flex-row gap-4 md:gap-0 justify-between pt-4">
-
             <button
               onClick={handleBooking}
               disabled={loading}
@@ -70,7 +63,6 @@ export const ContactForm = () => {
             >
               Secure • Private • Professional
             </motion.span>
-
           </div>
 
         </div>
