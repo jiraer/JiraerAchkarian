@@ -32,7 +32,6 @@ export const Shell = ({ children }: { children: React.ReactNode }) => {
         <Header />
 
         {/* AnimatePresence wraps page content only */}
-     // Shell.tsx
         <AnimatePresence mode="wait" initial={false}>
           <Suspense fallback={<div className="h-[400px] w-full animate-pulse bg-muted/60" />}>
             <motion.main
