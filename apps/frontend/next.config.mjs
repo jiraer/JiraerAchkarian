@@ -1,6 +1,6 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
-  // output: "export", // <-- remove or comment out
+  output: "export", // <-- remove or comment out
   images: {
     unoptimized: true,
     remotePatterns: [
