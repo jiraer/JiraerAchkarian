@@ -29,8 +29,8 @@ export const Header = ({ children }: { children?: React.ReactNode }) => {
     <>
       {/* HEADER */}
       <header className="sticky top-0 z-50 border-b border-white/5 backdrop-blur-xl bg-background/70">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-10 lg:px-16">
-          
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 lg:px-16">
+
           {/* LOGO */}
           <Link
             href="/"
@@ -112,76 +112,75 @@ export const Header = ({ children }: { children?: React.ReactNode }) => {
             />
 
             {/* RIGHT PANEL */}
-{/* RIGHT PANEL */}
-<motion.div
-  role="dialog"
-  aria-modal="true"
-  aria-label="Mobile menu"
-  initial={{ x: '100%' }}
-  animate={{ x: 0 }}
-  exit={{ x: '100%' }}
-  transition={{ duration: 0.55, ease: [0.77, 0, 0.18, 1] }}
-  className="fixed right-0 top-0 z-50 h-full w-[90vw] max-w-2xl bg-background border-l border-white/10 shadow-2xl"
->
-  {/* Accent Bar */}
-  <motion.div
-    initial={{ scaleY: 0 }}
-    animate={{ scaleY: 1 }}
-    exit={{ scaleY: 0 }}
-    transition={{ duration: 0.4 }}
-    className="absolute right-0 top-0 h-full w-[4px] bg-highlight origin-top"
-  />
+            {/* RIGHT PANEL */}
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobile menu"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ duration: 0.55, ease: [0.77, 0, 0.18, 1] }}
+              className="fixed right-0 top-0 z-50 h-full w-[90vw] max-w-2xl bg-background border-l border-white/10 shadow-2xl"
+            >
+              {/* Accent Bar */}
+              <motion.div
+                initial={{ scaleY: 0 }}
+                animate={{ scaleY: 1 }}
+                exit={{ scaleY: 0 }}
+                transition={{ duration: 0.4 }}
+                className="absolute right-0 top-0 h-full w-[4px] bg-highlight origin-top"
+              />
 
-  {/* Optional Noise Overlay */}
-  <div className="absolute inset-0 opacity-10 bg-noise-texture pointer-events-none"></div>
+              {/* Optional Noise Overlay */}
+              <div className="absolute inset-0 opacity-10 bg-noise-texture pointer-events-none"></div>
 
-  {/* CLOSE BUTTON */}
-  <button
-    onClick={() => setOpen(false)}
-    className="absolute top-6 right-6 z-50 h-10 w-10 flex items-center justify-center rounded-full bg-white/5 backdrop-blur-sm hover:bg-white/10 transition"
-    aria-label="Close Menu"
-  >
-    <motion.span
-      className="block h-[2px] w-6 bg-foreground origin-center absolute"
-      animate={{ rotate: 45 }}
-    />
-    <motion.span
-      className="block h-[2px] w-6 bg-foreground origin-center absolute"
-      animate={{ rotate: -45 }}
-    />
-  </button>
+              {/* CLOSE BUTTON */}
+              <button
+                onClick={() => setOpen(false)}
+                className="absolute top-6 right-6 z-50 h-10 w-10 flex items-center justify-center rounded-full bg-white/5 backdrop-blur-sm hover:bg-white/10 transition"
+                aria-label="Close Menu"
+              >
+                <motion.span
+                  className="block h-[2px] w-6 bg-foreground origin-center absolute"
+                  animate={{ rotate: 45 }}
+                />
+                <motion.span
+                  className="block h-[2px] w-6 bg-foreground origin-center absolute"
+                  animate={{ rotate: -45 }}
+                />
+              </button>
 
-  {/* Nav Items */}
-  <div className="flex h-full flex-col justify-center px-12 text-right relative">
-    {navItems.map((item, i) => {
-      const active = pathname === item.href
-      return (
-        <motion.div
-          key={item.href}
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 80, opacity: 0 }}
-          transition={{ delay: 0.2 + i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="relative"
-        >
-  
-          <Link
-            href={item.href}
-            onClick={() => setOpen(false)}
-            className={`block py-8 text-5xl font-display tracking-[0.12em] uppercase transition-all duration-300 hover:scale-105 hover:text-highlight ${
-              active ? 'text-highlight' : 'text-foreground'
-            }`}
-          >
-            {item.label}
-          </Link>
+              {/* Nav Items */}
+              <div className="flex h-full flex-col justify-center px-12 text-right relative">
+                {navItems.map((item, i) => {
+                  const active = pathname === item.href
+                  return (
+                    <motion.div
+                      key={item.href}
+                      initial={{ y: 80, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      exit={{ y: 80, opacity: 0 }}
+                      transition={{ delay: 0.2 + i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                      className="relative"
+                    >
 
-          {/* Divider */}
-          <div className="border-t border-white/10 mt-2"></div>
-        </motion.div>
-      )
-    })}
-  </div>
-</motion.div>          </>
+                      <Link
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className={`block py-8 text-5xl font-display tracking-[0.12em] uppercase transition-all duration-300 hover:scale-105 hover:text-highlight ${active ? 'text-highlight' : 'text-foreground'
+                          }`}
+                      >
+                        {item.label}
+                      </Link>
+
+                      {/* Divider */}
+                      <div className="border-t border-white/10 mt-2"></div>
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </motion.div>          </>
         )}
       </AnimatePresence>
     </>

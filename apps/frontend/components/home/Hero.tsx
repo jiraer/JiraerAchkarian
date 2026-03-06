@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { ArrowDownRight } from 'lucide-react';
+import Image from 'next/image';
 
 const phrases = [
   'full-stack systems with taste.',
@@ -21,9 +22,9 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section className="px-6 pt-16 md:px-10 md:pt-24 lg:px-16">
+    <section className="max-w-7xl mx-auto px-6 pt-16 md:px-10 md:pt-24 lg:px-16">
       <div className="grid gap-12 md:grid-cols-2 items-start">
-        
+
         {/* LEFT SIDE */}
         <div className="space-y-6 md:pr-8 lg:pr-12">
           <motion.p
@@ -99,63 +100,63 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE — IMAGE + CARD SIDE BY SIDE */}
+        {/* RIGHT SIDE */}
 
         <motion.div
-  className="grid md:grid-cols-7 w-full rounded-2xl overflow-hidden border border-white/5 bg-neutral-900 shadow-soft-glass"
-  initial={{ opacity: 0, y: 24 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.18 }}
->
-  {/* Image — 2/3 width */}
-  <div
-    className="md:col-span-4 h-[420px] bg-cover bg-center"
-    style={{
-      backgroundImage: 'url(/jiraer-achkarian.png)',
-      backgroundPosition: '50% 40%',
-    }}
-  />
+          className="grid md:grid-cols-7 w-full rounded-2xl overflow-hidden border border-white/5 bg-neutral-900 shadow-soft-glass"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.18 }}
+        >
 
-  {/* Card — 1/3 width */}
-  <motion.div
-    className="md:col-span-3 flex justify-center items-center p-6 bg-black/60 backdrop-blur-xl"
-    initial={{ opacity: 0, y: 12 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ type: 'spring', stiffness: 120, damping: 20, delay: 0.25 }}
-  >
-    {/* Inner container: row on mobile, column on desktop */}
-    <div className="flex flex-row md:flex-col w-full justify-between md:justify-start gap-x-6 md:gap-y-8">
-      
-      {/* Stack Section */}
-      <div className="flex flex-col justify-start items-start">
-        <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-2 md:mb-3">
-          Stack
-        </p>
-        <div className="space-y-1 text-sm text-neutral-200">
-          <p>TypeScript</p>
-          <p>Next.js · Node</p>
-          <p>Design Systems</p>
-        </div>
-      </div>
+          {/* Image */}
+          <div className="relative md:col-span-4 h-[420px]">
+            <Image
+              src="/jiraer-achkarian.webp"
+              alt="Jiraer Achkarian"
+              fill
+              loading="lazy"
+              className="object-cover"
+              style={{ objectPosition: '50% 40%' }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
 
-      {/* Approach Section */}
-      <div className="flex flex-col justify-start items-start">
-        <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-2 md:mb-3">
-          Approach
-        </p>
-        <div className="space-y-1 text-sm text-neutral-200">
-          <p>Motion-first</p>
-          <p>Opinionated UI</p>
-          <p>Production-ready systems</p>
-        </div>
-      </div>
+          {/* Card */}
+          <motion.div
+            className="md:col-span-3 flex justify-center items-center p-6 bg-black/60 backdrop-blur-xl"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', stiffness: 120, damping: 20, delay: 0.25 }}
+          >
+            <div className="flex flex-row md:flex-col w-full justify-between md:justify-start gap-x-6 md:gap-y-8">
 
-    </div>
-  </motion.div>
-</motion.div>
+              <div className="flex flex-col justify-start items-start">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-2 md:mb-3">
+                  Stack
+                </p>
+                <div className="space-y-1 text-sm text-neutral-200">
+                  <p>TypeScript</p>
+                  <p>Next.js · Node</p>
+                  <p>Design Systems</p>
+                </div>
+              </div>
 
+              <div className="flex flex-col justify-start items-start">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-400 mb-2 md:mb-3">
+                  Approach
+                </p>
+                <div className="space-y-1 text-sm text-neutral-200">
+                  <p>Motion-first</p>
+                  <p>Opinionated UI</p>
+                  <p>Production-ready systems</p>
+                </div>
+              </div>
 
+            </div>
+          </motion.div>
 
+        </motion.div>
 
       </div>
     </section>

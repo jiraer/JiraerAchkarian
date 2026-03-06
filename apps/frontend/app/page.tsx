@@ -14,9 +14,7 @@ export default function HomePage() {
         <Hero />
         <SkillsGrid />
         <ExperienceTimeline />
-        <section id="contact" className="px-6 md:px-10 lg:px-16">
-          <ContactForm />
-        </section>
+        <ContactForm />
       </main>
     </>
   );

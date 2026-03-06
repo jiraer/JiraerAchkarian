@@ -17,3 +17,4 @@ node_modules
   mongo-data
   # Next.js build artifacts
 apps/frontend/.next/
+apps/frontend/out/

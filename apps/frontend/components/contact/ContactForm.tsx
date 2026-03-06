@@ -19,8 +19,9 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="relative mx-auto max-w-3xl">
-      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-highlight/20 via-accent/10 to-highlight/20 blur-2xl opacity-60 pointer-events-none" />
+    <div className=" relative max-w-7xl mx-auto px-6 pt-16 md:px-10 md:pt-24 lg:px-16">
+      {/* Optimized Glow: Smaller, more transparent, and tighter blur */}
+      <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-r from-highlight/10 via-accent/5 to-highlight/10 blur-xl opacity-40 pointer-events-none" />
 
       <div className="relative rounded-3xl border border-white/10 bg-neutral-900/80 p-10 backdrop-blur-2xl shadow-[0_20px_60px_-10px_rgba(0,0,0,0.6)]">
 
