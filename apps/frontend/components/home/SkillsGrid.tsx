@@ -35,7 +35,7 @@ const skills = [
 // === Carousel Logos ===
 const carouselLogos = [
   '/nextdotjs.svg',
-  '/reactdotjs.svg',
+  '/react.svg',
   '/typescript.svg',
   '/nodedotjs.svg',
   '/mongodb.svg',
@@ -44,9 +44,6 @@ const carouselLogos = [
   '/cloudflare.svg',
   '/tailwindcss.svg',
 ];
-
-// Duplicate for seamless scroll
-const duplicated = [...carouselLogos, ...carouselLogos];
 
 // === Carousel Row Component ===
 function CarouselRow({ reverse = false }: { reverse?: boolean }) {
@@ -59,58 +56,77 @@ function CarouselRow({ reverse = false }: { reverse?: boolean }) {
   const controls = [controls0, controls1];
 
   useEffect(() => {
-    rowRefs.forEach((ref, i) => {
-      if (!ref.current) return;
+    const resizeObserver = new ResizeObserver(() => {
+      rowRefs.forEach((ref, i) => {
+        if (!ref.current) return;
 
-      const totalWidth = ref.current.scrollWidth / 2;
-      const duration = 40;
+        const el = ref.current;
+        const parentWidth = el.parentElement?.clientWidth || 0;
+        const scrollTarget = Math.max(0, el.scrollWidth - parentWidth);
 
-      const direction = reverse ? (i % 2 === 0 ? 1 : -1) : (i % 2 === 0 ? -1 : 1);
+        const duration = 20;
+        const direction = reverse ? (i % 2 === 0 ? 1 : -1) : (i % 2 === 0 ? -1 : 1);
 
-      controls[i].start({
-        x: direction === 1 ? [-totalWidth, 0] : [0, -totalWidth],
-        transition: {
-          x: {
-            repeat: Infinity,
-            repeatType: 'loop',
-            duration,
-            ease: 'linear',
-          },
-        },
+        if (scrollTarget > 0) {
+          controls[i].start({
+            x: direction === 1 ? [-scrollTarget, 0] : [0, -scrollTarget],
+            transition: {
+              x: {
+                repeat: Infinity,
+                repeatType: 'reverse',
+                duration,
+                ease: 'linear',
+              },
+            },
+          });
+        } else {
+          controls[i].stop();
+          controls[i].set({ x: 0 });
+        }
       });
     });
+
+    rowRefs.forEach(ref => {
+      if (ref.current?.parentElement) {
+        resizeObserver.observe(ref.current.parentElement);
+      }
+    });
+
+    return () => resizeObserver.disconnect();
   }, [reverse]);
 
   return (
-    <div className="relative w-full md:w-1/2 flex flex-col gap-8 justify-between items-stretch h-full">
-      {/* Title & Description */}
+    <div className="relative flex flex-col justify-between h-full min-h-full">
+      {/* Title & Description at the top */}
       <div className="flex flex-col gap-4">
         <p className="text-3xl md:text-4xl lg:text-5xl font-display tracking-tight text-white">
-          Skills & Technologies
+          Skills & Technologies  <span className="bg-gradient-to-r from-highlight to-accent bg-clip-text text-transparent">
+            Efficient Development
+          </span>
         </p>
-        <p className="text-sm sm:text-base text-left text-neutral-300 max-w-full sm:max-w-2xl">
+        <p className="text-sm sm:text-base text-neutral-300 max-w-full sm:max-w-2xl">
           Mastering modern tools and frameworks to build scalable, beautiful, and interactive applications.
         </p>
       </div>
 
-      {/* Carousel */}
-      <div className="relative overflow-hidden w-full flex-1">
+      {/* Carousel at the bottom */}
+      <div className="relative overflow-hidden w-full pt-8">
         {[0, 1].map((rowIdx) => (
           <motion.div
             key={rowIdx}
             ref={rowRefs[rowIdx]}
-            className="flex gap-3 w-max"
+            className="flex gap-3 w-max mt-8"
             animate={controls[rowIdx]}
           >
-            {duplicated.map((logo, j) => (
+            {carouselLogos.map((logo, j) => (
               <div
                 key={j}
-                className="mt-3 flex h-fit w-fit border border-white/25 p-4 rounded-lg items-center justify-center transition-all duration-300"
+                className="flex h-fit w-fit border border-white/25 p-4 rounded-lg items-center justify-center transition-all duration-300"
               >
                 <img
                   src={logo}
                   alt="tech logo"
-                  className="h-10 w-10 object-contain filter invert brightness-0 saturate-0"
+                  className="h-12 w-12 object-contain filter invert brightness-0 saturate-0"
                 />
               </div>
             ))}
@@ -132,12 +148,13 @@ export const SkillsGrid = () => {
       <div
         className="mx-auto  border-t border-white/5 pt-10 md:pt-14"
       ></div>
-      <div className="mx-auto flex flex-col md:flex-row justify-start md:justify-center items-start md:items-end gap-8">
-        {/* Carousel Left */}
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
         <CarouselRow />
 
+
+
         {/* Skills Cards Right */}
-        <div className="flex-1 grid gap-6 grid-cols-1 md:grid-cols-2 w-full">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
           {skills.map((group, idx) => {
             const Icon = group.icon;
             return (
