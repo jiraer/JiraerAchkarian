@@ -19,7 +19,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="relative max-w-7xl mx-auto px-6 pt-16 md:px-10 md:pt-24 lg:px-16">
+    <div id="contact" className="relative max-w-7xl mx-auto px-6 pt-16 md:px-10 md:pt-24 lg:px-16">
       {/* Soft Glow & Background */}
       <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-r from-highlight/10 via-accent/5 to-highlight/10 blur-xl opacity-40 pointer-events-none" />
 
