@@ -10,7 +10,7 @@ const LabScene = dynamic(
 
 export default function LabPage() {
   return (
-    <main className="px-6 md:px-10 lg:px-16 pb-24 pt-12 space-y-10">
+    <main className="px-6 max-w-7xl mx-auto md:px-10 lg:px-16 pb-24 pt-12 space-y-10">
       <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
           <h1 className="text-4xl md:text-5xl font-display tracking-tight">Lab</h1>

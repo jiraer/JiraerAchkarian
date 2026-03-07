@@ -36,7 +36,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
       }}
       whileHover={{ scale: 1.02 }}
       transition={{ type: 'spring', stiffness: 220, damping: 20 }}
-      className="group relative overflow-hidden rounded-3xl border border-white/5 bg-gradient-to-br from-white/4 via-black/40 to-black/70 p-5 backdrop-blur-2xl shadow-soft-glass"
+      className="group relative overflow-hidden rounded-xl border border-white/25 bg-gradient-to-br from-white/4 via-black/40 to-black/70 p-5 backdrop-blur-2xl shadow-soft-glass"
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-4">

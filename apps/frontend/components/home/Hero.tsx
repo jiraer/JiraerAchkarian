@@ -103,7 +103,7 @@ export const Hero = () => {
         {/* RIGHT SIDE */}
 
         <motion.div
-          className="grid md:grid-cols-7 w-full rounded-2xl overflow-hidden border border-white/5 bg-neutral-900 shadow-soft-glass"
+          className="grid md:grid-cols-7 w-full rounded-2xl overflow-hidden border border-white/25 bg-neutral-900 shadow-soft-glass"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.18 }}

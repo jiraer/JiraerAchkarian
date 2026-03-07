@@ -13,11 +13,11 @@ export const AnimatedCursor = () => {
   const cursorY = useMotionValue(-100);
   const isHovering = useMotionValue(0);
 
-  const smoothX = useSpring(cursorX, { stiffness: 140, damping: 18 });
-  const smoothY = useSpring(cursorY, { stiffness: 140, damping: 18 });
+  const smoothX = useSpring(cursorX, { stiffness: 250, damping: 20 });
+  const smoothY = useSpring(cursorY, { stiffness: 250, damping: 20 });
 
   const scale = useSpring(isHovering, {
-    stiffness: 300,
+    stiffness: 310,
     damping: 25,
   });
 

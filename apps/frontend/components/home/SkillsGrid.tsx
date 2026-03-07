@@ -144,75 +144,99 @@ function CarouselRow({ reverse = false }: { reverse?: boolean }) {
 // === Skills Grid Component ===
 export const SkillsGrid = () => {
   return (
-    <section className="relative max-w-7xl mx-auto  px-6 md:px-10 lg:px-16 ">
-      <div
-        className="mx-auto  border-t border-white/5 pt-10 md:pt-14"
-      ></div>
+    <section className="relative max-w-7xl mx-auto px-6 md:px-10 lg:px-16">
+      <div className="mx-auto border-t border-white/5 pt-10 md:pt-14"></div>
+
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-stretch">
         <CarouselRow />
 
-
-
-        {/* Skills Cards Right */}
+        {/* Skills Cards */}
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
           {skills.map((group, idx) => {
-            const Icon = group.icon;
             return (
               <motion.div
                 key={group.label}
+                id='jack'
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover="hover" // Triggers staggered children
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: idx * 0.05, duration: 0.3 }}
-                whileTap={{ scale: 0.97 }}
-                className="group relative overflow-hidden rounded-lg border border-white/5
-                           bg-gradient-to-br from-muted/70 via-background to-black/80
-                           p-5 md:p-4 shadow-soft-glass transition-all duration-300 flex flex-col gap-4"
+                transition={{ delay: idx * 0.05, duration: 0.2 }}
+                className="group relative overflow-hidden rounded-lg border border-white/25
+                bg-gradient-to-br from-muted/80 via-background to-black/90
+                p-5 md:p-4 shadow-soft-glass transition-all duration-300 flex flex-col gap-4 cursor-pointer"
               >
-                {/* Glow overlay */}
+                {/* Glow Background */}
                 <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="absolute -top-16 -left-16 h-48 w-48 bg-highlight/15 blur-3xl rounded-full" />
-                  <div className="absolute -bottom-16 -right-16 h-48 w-48 bg-accent/15 blur-3xl rounded-full" />
+                  <div className="absolute -top-16 -left-16 h-48 w-48 bg-highlight/25 blur-3xl rounded-full" />
+                  <div className="absolute -bottom-16 -right-16 h-48 w-48 bg-accent/25 blur-3xl rounded-full" />
                 </div>
 
                 {/* Header */}
                 <div className="flex items-center gap-3">
-                  <div className="flex h-7 w-7 items-center justify-center rounded bg-highlight/10">
-                    <Icon className="h-5 w-5 text-white" />
-                  </div>
-                  <p className="text-sm md:text-xs uppercase tracking-[0.15em] text-neutral-400">
+                  <p className="text-sm md:text-xs uppercase tracking-[0.15em] text-white/85 font-medium">
                     {group.label}
                   </p>
                 </div>
 
-                {/* Logos */}
+                {/* Staggered Logos */}
                 {group.logos.length > 0 && (
-                  <div className="flex gap-2 flex-wrap">
+                  <motion.div
+                    className="flex gap-4 flex-wrap items-center py-1"
+                    variants={{
+                      hover: {
+                        transition: {
+                          staggerChildren: 0.07, // The staggering delay
+                        }
+                      }
+                    }}
+                  >
                     {group.logos.map((logo, i) => (
-                      <img
-                        key={i}
-                        src={logo}
-                        alt={`${group.label} logo`}
-                        className="h-6 w-6 object-contain filter invert brightness-0 saturate-0"
-                        loading="lazy"
-                      />
+                      <div key={i} className="relative">
+                        {/* 3D Shadow Layer */}
+                        <motion.div
+                          className="absolute inset-0 bg-black/80 blur-md rounded-full"
+                          variants={{
+                            hover: {
+                              opacity: 0.8,
+                              y: 8,
+                              scale: 0.8,
+                            },
+                          }}
+                          initial={{ opacity: 0, y: 0, scale: 1 }}
+                          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        />
+
+                        {/* The Logo */}
+                        <motion.img
+                          src={logo}
+                          alt={`${group.label} logo`}
+                          className="relative h-7 w-7 object-contain filter invert brightness-0 z-10"
+                          variants={{
+                            hover: {
+                              y: -6, // Lift effect
+                              filter: "invert(1) brightness(1) drop-shadow(0 10px 8px rgba(0,0,0,0.5))",
+                            },
+                          }}
+                          initial={{ y: 0 }}
+                          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                          loading="lazy"
+                        />
+                      </div>
                     ))}
-                  </div>
+                  </motion.div>
                 )}
 
                 {/* Items */}
-                <ul className="list-disc list-inside space-y-1 text-sm text-neutral-300 flex flex-col">
+                <ul className="list-disc list-inside space-y-1 text-sm text-white/70 flex flex-col relative z-10">
                   {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="transition-colors duration-300 group-hover:text-neutral-100"
-                    >
+                    <li key={item} className="transition-colors duration-300 group-hover:text-white">
                       {item}
                     </li>
                   ))}
                 </ul>
 
-                {/* Overlay effect */}
+                {/* Subtle Overlay */}
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-white/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               </motion.div>
             );

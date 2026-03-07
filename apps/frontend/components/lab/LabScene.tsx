@@ -253,11 +253,6 @@ const UIOverlay = ({ theme, setTheme, autoRotate, setAutoRotate, isFocused, setI
       {/* Top Bar */}
       <header className="flex justify-between items-start">
         <div className="pointer-events-auto backdrop-blur-md bg-white/5 border border-white/10 p-4 rounded-2xl shadow-2xl">
-          <h1 className="text-white text-xl md:text-2xl font-bold tracking-widest flex items-center gap-2">
-            <Zap className={`w-5 h-5 ${theme === 'neon' ? 'text-teal-400' : theme === 'cyberpunk' ? 'text-rose-500' : 'text-gray-300'}`} />
-            LAB_CORE
-          </h1>
-          <p className="text-white/50 text-xs md:text-sm mt-1 uppercase font-mono tracking-wider">Interactive Matrix</p>
         </div>
 
         {/* Controls */}
