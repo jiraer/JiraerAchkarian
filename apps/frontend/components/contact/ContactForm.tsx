@@ -42,10 +42,7 @@ export const ContactForm = () => {
 
         {/* Info Card */}
         <div className="mt-8 space-y-6">
-          <motion.div
-            whileHover={{ scale: 1.02, rotateX: 1, rotateY: 1 }}
-            transition={{ type: 'spring', stiffness: 180 }}
-            className="rounded-2xl border border-white/10 bg-neutral-800/50 p-6 text-sm text-neutral-300 shadow-sm hover:shadow-md transition-shadow duration-300"
+          <div className="rounded-2xl border border-white/10 bg-neutral-800/50 p-6 text-sm text-neutral-300 shadow-sm hover:shadow-md transition-shadow duration-300"
           >
             <p className="font-medium text-white mb-2">What to expect:</p>
             <ul className="space-y-2 text-neutral-400 list-inside list-disc">
@@ -54,7 +51,7 @@ export const ContactForm = () => {
               <li>Timeline & budget alignment</li>
               <li>Next steps clarity</li>
             </ul>
-          </motion.div>
+          </div>
 
           {/* Button + Note */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 pt-4">
