@@ -33,7 +33,7 @@ export const Hero = () => {
             transition={{ delay: 0.05 }}
             className="text-xs uppercase tracking-[0.22em] text-neutral-400"
           >
-            Jiraer Achkarian · Developer & Designer
+            Jiraer Achkarian · Full-stack Developer
           </motion.p>
 
           <motion.h1
@@ -42,7 +42,7 @@ export const Hero = () => {
             transition={{ delay: 0.12 }}
             className="text-4xl leading-tight md:text-5xl lg:text-6xl font-display tracking-tight"
           >
-            I design & engineer{' '}
+            I build & engineer{' '}
             <span className="bg-gradient-to-r from-highlight to-accent bg-clip-text text-transparent">
               premium product experiences
             </span>
@@ -148,7 +148,7 @@ export const Hero = () => {
                 </p>
                 <div className="space-y-1 text-sm text-neutral-200">
                   <p>Motion-first</p>
-                  <p>Opinionated UI</p>
+                  <p>Full-Stack Architecture</p>
                   <p>Production-ready systems</p>
                 </div>
               </div>

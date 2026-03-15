@@ -6,25 +6,25 @@ const baseUrl =
 export const seo: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Jiraer Achkarian – Developer & Designer',
+    default: 'Jiraer Achkarian – Full-Stack Developer',
     template: '%s | Jiraer Achkarian',
   },
   description:
-    'Senior full-stack engineer and product designer crafting premium, animated digital experiences.',
+    'full-stack developer and product designer crafting premium, animated digital experiences.',
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
     url: baseUrl,
-    title: 'Jiraer Achkarian – Developer & Designer',
+    title: 'Jiraer Achkarian – Full-Stack Developer',
     description:
-      'Senior full-stack engineer and product designer crafting premium, animated digital experiences.',
+      'full-stack developer and product designer crafting premium, animated digital experiences.',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Jiraer Achkarian' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jiraer Achkarian – Developer & Designer',
+    title: 'Jiraer Achkarian – Full-Stack Developer',
     description:
-      'Senior full-stack engineer and product designer crafting premium, animated digital experiences.',
+      'full-stack developer and product designer crafting premium, animated digital experiences.',
   },
 };
 
@@ -34,9 +34,9 @@ export function getPersonJsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Jiraer Achkarian',
-    jobTitle: 'Developer & Designer',
+    jobTitle: 'Full-Stack Developer',
     description:
-      'Senior full-stack engineer and product designer crafting premium, animated digital experiences.',
+      'full-stack developer and product designer crafting premium, animated digital experiences.',
     url: baseUrl,
   };
 }
